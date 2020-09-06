@@ -5,11 +5,7 @@
 
 int main()
 {
-    Complex cx1 = { 2, 4 };
-    Complex cx2 = { 1, -1 };
-    Complex cx3 = cxMul(cx1, cx2);
-
-    cxAnalyze(cx3);
+    cxRun();
 
     //sfContextSettings context_settings;
     //context_settings.antialiasingLevel = 4;

@@ -1,5 +1,15 @@
 #include "global.h"
 
+double deg(double rad)
+{
+    return rad * 180 / PI;
+}
+
+double rad(double deg)
+{
+    return deg / (180 / PI);
+}
+
 void fatal(const char* message)
 {
     static char* prefix = "[ERROR] ";

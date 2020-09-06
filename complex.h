@@ -6,13 +6,26 @@
 /*------------------------------------------------------------------*/
 // Basics
 
+// The algebraic form of a complex number
 typedef struct
 {
-    double real;
-    double imag;
+    // Algebraic form:
+    double real; // "a"
+    double imag; // "b"
+    bool _algebraic;
+
+    // Polar form:
+    double mod; // "r"
+    double arg; // "phi"
+    bool _polar;
+
 } Complex;
 
-extern const Complex ZERO;
+Complex cxFromAlgebraic(double real, double imaginary);
+Complex cxFromPolar(double modulus, double argument);
+
+extern const Complex cxZERO;
+extern const Complex cxNEW;
 
 char* cxAsString(Complex cx);
 
@@ -38,15 +51,13 @@ Complex cxAdd(Complex cx1, Complex cx2);
 Complex cxSub(Complex cx1, Complex cx2);
 Complex cxMul(Complex cx1, Complex cx2);
 Complex cxDiv(Complex cx1, Complex cx2);
-
-/*------------------------------------------------------------------*/
-// Polar form
-
-// TODO
+Complex cxPow(Complex cx1, double to);
 
 /*------------------------------------------------------------------*/
 // Everything together
 
 void cxAnalyze(Complex cx);
+
+void cxRun();
 
 #endif
